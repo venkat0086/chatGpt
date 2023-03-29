@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
-import "./Chat.css";
-import ChatGPTLogo from "./Images/chatGpt.png";
-import UserLogo from "./Images/user.png";
+import "../Chat.css";
+import ChatGPTLogo from "../Images/chatGpt.png";
+import UserLogo from "../Images/user.png";
 import {
   MainContainer,
   ChatContainer,
