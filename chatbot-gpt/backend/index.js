@@ -13,6 +13,7 @@ const { register, login } = require("./src/controllers/Auth_controller");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI);
@@ -22,11 +23,6 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
-
-//Routes go here
-app.all("*", (req, res) => {
-  res.json({ "every thing": "is awesome" });
-});
 
 app.use(cors());
 app.use(express.json());
