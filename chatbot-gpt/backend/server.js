@@ -11,7 +11,7 @@ const userController = require("./src/controllers/User_controller");
 const { register, login } = require("./src/controllers/Auth_controller");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
