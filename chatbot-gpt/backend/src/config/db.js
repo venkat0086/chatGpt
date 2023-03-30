@@ -1,10 +1,10 @@
+const { config } = require("dotenv");
 const mongoose = require("mongoose");
+config();
 
 const connect = () => {
   //   mongoose.set("strictQuery", false);
-  return mongoose.connect(
-    "mongodb+srv://venkat:venkat@cluster0.cosjset.mongodb.net/?retryWrites=true&w=majority"
-  );
+  return mongoose.connect(process.env.MONGODB_URI);
 };
 
 module.exports = connect;

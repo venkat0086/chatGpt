@@ -37,7 +37,7 @@ export const Register = () => {
     };
 
     dispatch(registerLoading());
-    fetch(`http://localhost:8080/register`, {
+    fetch(`${process.env.REACT_APP_SERVER_URI}/register`, {
       method: "POST",
       body: JSON.stringify(registerDetails),
       headers: {

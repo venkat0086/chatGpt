@@ -19,7 +19,7 @@ export const login =
   ({ username, password }) =>
   (dispatch) => {
     dispatch(loginLoading());
-    fetch(`http://localhost:8080/login`, {
+    fetch(`${process.env.REACT_APP_SERVER_URI}/login`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {
