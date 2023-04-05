@@ -16,7 +16,6 @@ const Login = () => {
   };
 
   const handleLoading = () => {
-    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 3000);
@@ -25,6 +24,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const url = `${process.env.REACT_APP_SERVER_URI}/api/auth`;
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);

@@ -23,16 +23,16 @@ const Signup = () => {
   };
 
   const handleLoading = () => {
-    setLoading(true);
     setTimeout(() => {
       setLoading(false);
       navigate("/login");
-    }, 3000);
+    }, 1000);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const url = `${process.env.REACT_APP_SERVER_URI}/api/users`;
       const { data: res } = await axios.post(url, data);
       if (res.message) {
