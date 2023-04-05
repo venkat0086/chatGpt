@@ -45,6 +45,7 @@ const Signup = () => {
         error.response.status >= 400 &&
         error.response.status <= 500
       ) {
+        setLoading(false);
         setPopup(true);
         setPopUpContent(error.response.data.message);
         setTimeout(() => {
