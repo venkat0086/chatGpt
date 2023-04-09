@@ -5,6 +5,8 @@ const cors = require("cors");
 const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
+// const chatRoutes = require("./routes/chat");
+const chatUniRoutes = require("./routes/chat");
 
 // database connection
 connection();
@@ -16,6 +18,8 @@ app.use(cors());
 // routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+// app.use("/chat", chatRoutes);
+app.use("/chat", chatUniRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));

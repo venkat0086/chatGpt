@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import AlertPop from "./AlertPop";
+import jwt_decode from "jwt-decode";
 import Spinner from "./Spinner";
 
 const Login = () => {
@@ -30,8 +31,10 @@ const Login = () => {
       localStorage.setItem("token", res.data);
       if (res) {
         handleLoading();
+        const decoded = jwt_decode(res.data);
+        console.log(decoded);
+        window.location = `/chat/${decoded._id}`;
       }
-      window.location = "/";
     } catch (error) {
       if (
         error.response &&
